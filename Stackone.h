@@ -1,18 +1,19 @@
 #include "Stacktwo.h"
 #include "Stack.h"
 
+
 typedef struct DoubleStack {
-	Stack st;//´æÊı¾İµÄÕ»
-	NStack nst;//´æ½á¹¹ÌåµÄÕ»
+	Stack st;//å­˜æ•°æ®çš„æ ˆ
+	NStack nst;//å­˜ç»“æ„ä½“çš„æ ˆ
 }DoubleStack;
 
-void DoubleStackInit(DoubleStack* ds);//³õÊ¼»¯
-void DoubleStackDestory(DoubleStack* ds);//Ïú»Ù
-void DoubleStackPush(DoubleStack* ds, DataType x);//Èë
-void DoubleStackPop(DoubleStack* ds);//³ö
-DataType DoubleStackTop(const DoubleStack* ds);//Õ»¶¥ÔªËØ
-int DoubleStackEmpty(const DoubleStack* ds);//ÅĞ¿Õ
-int DoubleStackSize(const DoubleStack* ds);//´æÈëÔªËØ¶àÉÙ
-int GetMinNum(const DoubleStack* ds);//È¡µÃµ±Ç°×îĞ¡Öµ
+void DoubleStackInit(DoubleStack* ds);//åˆå§‹åŒ–
+void DoubleStackDestory(DoubleStack* ds);//é”€æ¯
+void DoubleStackPush(DoubleStack* ds, DataType x);//å…¥
+void DoubleStackPop(DoubleStack* ds);//å‡º
+DataType DoubleStackTop(const DoubleStack* ds);//æ ˆé¡¶å…ƒç´ 
+int DoubleStackEmpty(const DoubleStack* ds);//åˆ¤ç©º
+int DoubleStackSize(const DoubleStack* ds);//å­˜å…¥å…ƒç´ å¤šå°‘
+int GetMinNum(const DoubleStack* ds);//å–å¾—å½“å‰æœ€å°å€¼
 
 void TestDoubleStack();
