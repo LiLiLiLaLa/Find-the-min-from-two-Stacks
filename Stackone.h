@@ -1,7 +1,6 @@
 #include "Stacktwo.h"
 #include "Stack.h"
 
-
 typedef struct DoubleStack {
 	Stack st;//存数据的栈
 	NStack nst;//存结构体的栈
