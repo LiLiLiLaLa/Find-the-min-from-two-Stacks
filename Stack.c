@@ -1,10 +1,9 @@
 #include "Stack.h"
-
 //typedef struct Stack
 //{
 //	DataType* _a;
-//	int _top;		// Õ»¶¥
-//	int _capacity;  // ÈÝÁ¿ 
+//	int _top;		// æ ˆé¡¶
+//	int _capacity;  // å®¹é‡ 
 //}Stack;
 
 void StackInit(Stack* ps)
@@ -26,48 +25,48 @@ void StackDestory(Stack* ps)
 
 void StackPush(Stack* ps, DataType x)
 {
-	//¶ÏÑÔ
+	//æ–­è¨€
 	assert(ps);
-	//ÅÐ¶ÏÕ»ÊÇ·ñÒÑÂú
+	//åˆ¤æ–­æ ˆæ˜¯å¦å·²æ»¡
 	if (ps->_top == ps->_capacity)
 	{
 		ps->_a = realloc(ps->_a, sizeof(DataType)*(ps->_capacity + 3));
-		assert(ps->_a);//ÖØÐÂ¿ª±ÙÄÚ´æÊ§°Ü»á·µ»Ø¿ÕÖ¸Õë
+		assert(ps->_a);//é‡æ–°å¼€è¾Ÿå†…å­˜å¤±è´¥ä¼šè¿”å›žç©ºæŒ‡é’ˆ
 		ps->_capacity += 3;
 	}
-	//·ÅÈë
+	//æ”¾å…¥
 	ps->_a[ps->_top] = x;
 	ps->_top++;
 }
 
 void StackPop(Stack* ps)
 {
-	//¶ÏÑÔ
+	//æ–­è¨€
 	assert(ps);
-	//ÅÐ¿Õ
+	//åˆ¤ç©º
 	if (ps->_top == 0)
 	{
 		return;
 	}
-	//É¾³ý
+	//åˆ é™¤
 	ps->_top--;
 }
 
 DataType StackTop(const Stack* ps)
 {
-	//¶ÏÑÔ
+	//æ–­è¨€
 	assert(ps);
-	//ÅÐ¿Õ
+	//åˆ¤ç©º
 	assert(ps->_top);
-	//·µ»ØÕ»¶¥ÔªËØ
+	//è¿”å›žæ ˆé¡¶å…ƒç´ 
 	return ps->_a[ps->_top - 1];
 }
 
 int StackEmpty(const Stack* ps)
 {
-	//¶ÏÑÔ
+	//æ–­è¨€
 	assert(ps);
-	//ÅÐ¿Õ
+	//åˆ¤ç©º
 	if (ps->_top == 0)
 	{
 		return 0;
@@ -80,8 +79,8 @@ int StackEmpty(const Stack* ps)
 
 int StackSize(const Stack* ps)
 {
-	//¶ÏÑÔ
+	//æ–­è¨€
 	assert(ps);
-	//·µ»ØÕ»ÖÐÓÐ¶àÉÙÔªËØ
+	//è¿”å›žæ ˆä¸­æœ‰å¤šå°‘å…ƒç´ 
 	return ps->_top;
 }
