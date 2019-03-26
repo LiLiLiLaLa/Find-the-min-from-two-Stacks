@@ -16,10 +16,11 @@ void NStackDestory(NStack* ps)
 	ps->_a = NULL;
 }
 
+
 void NStackPush(NStack* ps, SDataType x)
 {
 	assert(ps);
-	//ÅĞ¶ÏÊÇ·ñĞèÒªÀ©Èİ
+	//åˆ¤æ–­æ˜¯å¦éœ€è¦æ‰©å®¹
 	if (ps->_capacity == ps->_top)
 	{
 		ps->_a = realloc(ps->_a, sizeof(SDataType)*(ps->_capacity + ADD_SIZE));
@@ -28,6 +29,7 @@ void NStackPush(NStack* ps, SDataType x)
 	}
 	ps->_a[ps->_top++] = x;
 }
+
 
 void NStackPop(NStack* ps)
 {
@@ -52,10 +54,10 @@ SDataType NStackTop(const NStack* ps)
 int NStackEmpty(const NStack* ps)
 {
 	assert(ps);
-	return ps->_top == 0 ? 0 : 1;//0Îª¿Õ¡¢1Îª·Ç¿Õ
+	return ps->_top == 0 ? 0 : 1;//0ä¸ºç©ºã€1ä¸ºéç©º
 }
 
-//»ñÈ¡Õ»ÖĞÔªËØ¸öÊı
+//è·å–æ ˆä¸­å…ƒç´ ä¸ªæ•°
 int NStackSize(const NStack* ps)
 {
 	assert(ps);
